@@ -28,4 +28,33 @@ Um assistente de banco de dados alimentado por IA que permite conversar naturalm
 3. **Workflow de automação** - Integrando chat, IA e consultas ao banco
 4. **Proxy reverso** - Configuração HTTPS com certificado SSL
 
-[... continuaremos após sua confirmação do passo 1 ...]
+# Arquitetura do Sistema
+
+## Diagrama de Componentes
+
+![Diagrama de Arquitetura](images/architecture-diagram.png)
+
+## Fluxo de Dados
+
+1. O usuário envia uma mensagem via interface de chat
+2. O n8n recebe a mensagem através do webhook
+3. O Agente IA processa a mensagem usando o modelo da OpenAI
+4. Ferramentas de banco de dados são acionadas conforme necessário
+5. A resposta é gerada e retornada ao usuário
+
+# Configuração do Ambiente
+
+## Pré-requisitos
+
+- Conta na Digital Ocean
+- Domínio configurado (no-ip ou similar)
+- Chave API da OpenAI
+- Instância PostgreSQL
+
+## Passo a Passo
+
+1. Criar droplet na Digital Ocean
+2. Configurar DNS dinâmico
+3. Instalar Docker e n8n
+4. Configurar certificado SSL
+5. Importar workflow para o n8n
